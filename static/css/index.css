@@ -17,7 +17,8 @@ body {
 	margin-right: auto;
 }
 .swiper-slide {
-	background-size: cover;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
 	background-position: center;
 }
 .gallery-top {
