@@ -19,3 +19,8 @@ var galleryTop = new Swiper('.gallery-top', {
 		swiper: galleryThumbs,
 	},
 });
+
+function downloadImages(images){
+	var activeSlide = parseInt(jQuery('.swiper-slide-active')[0].attributes[2].value);
+	window.open('../static/img/' + images[activeSlide], '_blank');
+};
