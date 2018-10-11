@@ -22,5 +22,16 @@ var galleryTop = new Swiper('.gallery-top', {
 
 function downloadImages(images){
 	var activeSlide = parseInt(jQuery('.swiper-slide-active')[0].attributes[2].value);
-	window.open('../static/img/' + images[activeSlide], '_blank');
+	
+	var link = document.createElement('a');
+	link.href = '../static/img/' + images[activeSlide];
+	link.download = images[activeSlide];
+	document.body.appendChild(link);
+	link.click();
+	
+	setTimeout(
+		function(){
+			link.parentNode.removeChild( link );
+		}, 10
+	);
 };
